@@ -12,6 +12,6 @@ Theme based on [claudiabdm/kuraunaito: My photography journal](https://github.co
 
 ## License
 
-All photos and text are copyright Scott Willsey unless otherwise noted.
+All photos and text are copyright Scott Willsey and may not be used.
 
 Site code is licensed under the [MIT License](https://opensource.org/licenses/MIT).

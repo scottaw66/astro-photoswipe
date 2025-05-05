@@ -1,0 +1,23 @@
+---
+import Header from "../components/Header.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, slug, breadcrumbs = [] } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <link rel="stylesheet" href="/photos.css" />
+    <slot name="head" />
+  </head>
+  <body>
+    <Header slug={slug} />
+    <main>
+      {slug !== "home" && <Breadcrumbs breadcrumbs={breadcrumbs} />}
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

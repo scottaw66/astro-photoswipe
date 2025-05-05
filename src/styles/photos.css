@@ -1,0 +1,102 @@
+@import "normalize.css";
+
+@font-face {
+  font-family: Lato;
+  src: url("/fonts/Merriweather/Lato-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/fonts/Merriweather/Lato-BlackItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/fonts/Merriweather/Lato-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/fonts/Merriweather/Lato-BoldItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/fonts/Merriweather/Lato-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/fonts/Merriweather/Lato-LightItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/fonts/Merriweather/Lato-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: Lato;
+  src: url("/fonts/Merriweather/Lato-Thin.woff2") format("woff2");
+  font-weight: 100;
+}
+@font-face {
+  font-family: Lato;
+  src: url("/fonts/Merriweather/Lato-ThinItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Merriweather;
+  src: url("/fonts/Merriweather/Merriweather-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Merriweather;
+  src: url("/fonts/Merriweather/Merriweather-BlackItalic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Merriweather;
+  src: url("/fonts/Merriweather/Merriweather-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IBM Plex Mono;
+  src: url("/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: IBM Plex Mono;
+  src: url("/fonts/IBM_Plex_Mono/IBMPlexMono-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-display: swap;
+}
+
+html {
+  font-family: Lato, sans-serif;
+}
+
+:root {
+  --font-fallback: -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+  --font-body: "Lato", system-ui, var(--font-fallback);
+  --font-mono:
+    "IBM Plex Mono", Consolas, "Andale Mono WT", "Andale Mono",
+    "Lucida Console", "DejaVu Sans Mono", "Liberation Mono", "Nimbus Mono L",
+    Monaco, "Courier New", Courier, monospace;
+}

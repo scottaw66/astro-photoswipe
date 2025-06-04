@@ -1,0 +1,18 @@
+{
+  "title": "Photos by Scott Willsey",
+  "description": "photos I've taken",
+  "url": "https://photos.scottwillsey.com/",
+  "name": "Scott Willsey",
+  "social": {
+    "github": "https://github.com/scottaw66",
+    "mastodon": "https://social.lol/@scottwillsey",
+    "bluesky": "https://bsky.app/profile/scottwillsey.com"
+  },
+  "posts": {
+    "path": "/",
+    "paginationSize": 7
+  },
+  "reviews": {
+    "paginationSize": 10
+  }
+}

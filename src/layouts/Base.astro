@@ -1,20 +1,31 @@
 ---
+import "./src/styles/global.css";
 import Header from "../components/Header.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import Footer from "../components/Footer.astro";
 
-const { title, slug, breadcrumbs = [] } = Astro.props;
+const { title = "Photo Gallery", slug, breadcrumbs = [] } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang="en" class="scroll-smooth">
   <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
     <link rel="stylesheet" href="/photos.css" />
-    <slot name="head" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="preload"
+      href="/fonts/open-sans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body>
     <Header slug={slug} />
-    <main>
+    <main class="container mx-auto px-4 py-16">
       {slug !== "home" && <Breadcrumbs breadcrumbs={breadcrumbs} />}
       <slot />
     </main>

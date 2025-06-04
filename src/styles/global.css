@@ -1,4 +1,4 @@
-@import "normalize.css";
+@import "tailwindcss";
 
 @font-face {
   font-family: Lato;
@@ -88,15 +88,48 @@
   font-display: swap;
 }
 
-html {
-  font-family: Lato, sans-serif;
+@theme {
+  --font-title: "Merriweather", serif;
+  --font-display: "Lato", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
 }
 
-:root {
-  --font-fallback: -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
-  --font-body: "Lato", system-ui, var(--font-fallback);
-  --font-mono:
-    "IBM Plex Mono", Consolas, "Andale Mono WT", "Andale Mono",
-    "Lucida Console", "DejaVu Sans Mono", "Liberation Mono", "Nimbus Mono L",
-    Monaco, "Courier New", Courier, monospace;
+@layer base {
+  body {
+    @apply font-display text-slate-50 bg-stone-950;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title text-lime-200;
+  }
+  h1 {
+    @apply text-6xl font-bold;
+  }
+  code {
+    @apply font-mono;
+  }
+  svg#footer-bluesky-icon {
+    fill: var(--color-blue-400);
+    width: 1.5em;
+    height: 1.5em;
+  }
+  svg#footer-mastodon-icon {
+    fill: var(--color-purple-400);
+    width: 1.5em;
+    height: 1.5em;
+  }
+  svg#footer-github-icon {
+    fill: var(--color-neutral-50);
+    width: 1.5em;
+    height: 1.5em;
+  }
+  .footer-links {
+    display: flex;
+    gap: 0.5em;
+    margin: 0 0 -0.75em;
+  }
 }

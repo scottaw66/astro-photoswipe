@@ -27,10 +27,10 @@
     "preview:h": "astro preview --host"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.3.1",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.4.1",
     "@philnash/astro-pagination": "^0.5.0",
-    "astro": "^5.7.10",
+    "astro": "^5.8.2",
     "astro-font": "^1.1.0",
     "astro-pagefind": "^1.8.3",
     "date-fns": "^4.1.0",
@@ -40,6 +40,6 @@
     "prettier-plugin-astro": "^0.14.1",
     "rehype-accessible-emojis": "^0.3.2",
     "remark-toc": "^9.0.0",
-    "sanitize-html": "^2.16.0"
+    "sanitize-html": "^2.17.0"
   }
 }

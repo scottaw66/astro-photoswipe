@@ -4,20 +4,20 @@ import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Base.astro";
 
-const albums = await getCollection("albums");
+const words = await getCollection("words");
 ---
 
-<Layout title="Gallery">
+<Layout title="Words">
   <div class="text-center">
-    <h1>Photo Gallery</h1>
-    <p class="text-xl my-4">A collection of my photos</p>
+    <h1>Words</h1>
+    <p class="text-xl my-4">Some words on a photo</p>
   </div>
   <div class="mx-auto container max-w-screen-sm grid grid-cols-2 gap-8">
     {
-      albums.map((item) => (
-        <a href={`/gallery/${item.id}`} class="group transition-all mb-4 block">
+      words.map((item) => (
+        <a href={`/words/${item.id}`} class="group transition-all mb-4 block">
           <Image
-            src={item.data.cover}
+            src={item.data.image}
             alt={item.data.title}
             format="avif"
             width={720}

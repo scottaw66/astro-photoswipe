@@ -1,6 +1,7 @@
-import { defineCollection, z } from "astro:content";
+import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
 
-const albums = defineCollection({
+const albumsCollection = defineCollection({
   type: "data",
   schema: ({ image }) =>
     z.object({
@@ -10,6 +11,23 @@ const albums = defineCollection({
     }),
 });
 
+const wordsCollection = defineCollection({
+  loader: glob({ pattern: "*.md", base: "./src/content/words" }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      image: image(),
+      keywords: z.string().array(),
+      date: z
+        .string()
+        .transform((str) => new Date(str))
+        .optional()
+        .nullable(),
+    }),
+});
+
 export const collections = {
-  albums,
+  albums: albumsCollection,
+  words: wordsCollection,
 };

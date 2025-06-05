@@ -4,6 +4,8 @@ import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Base.astro";
 
+import { postdate } from "@components/utilities/DateFormat.js";
+
 const words = await getCollection("words");
 ---
 
@@ -27,11 +29,14 @@ const words = await getCollection("words");
               "group-hover:shadow-lg group-hover:opacity-90",
             ]}
           />
-          <div class="mt-4 text-center">
-            <strong class="font-mono font-normal text-lime-200 text-xl">
+          <div class="mt-4">
+            <strong class="text-center font-mono font-normal text-lime-200 text-3xl">
               {item.data.title}
             </strong>
-            <p class="font-text text-sm">{item.data.description}</p>
+            <p class="font-text text-sm text-teal-200 my-4">
+              {postdate(item.data.date)}
+            </p>
+            <p class="font-text text-sm -my-2">{item.data.description}</p>
             <p class="font-text text-xs text-orange-300 italic my-5">
               read more...
             </p>

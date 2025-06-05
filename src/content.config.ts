@@ -2,12 +2,23 @@ import { z, defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 
 const albumsCollection = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "*.json", base: "src/content/albums" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      description: z.string().optional(),
-      cover: image(),
+      description: z.string(),
+      image: image(),
+      parent: z.string(),
+      images: z
+        .array(
+          z.object({
+            src: image(),
+            alt: z.string(),
+            title: z.string(),
+            description: z.string(),
+          }),
+        )
+        .optional(),
     }),
 });
 

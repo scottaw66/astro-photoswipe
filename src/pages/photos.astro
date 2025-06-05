@@ -17,7 +17,7 @@ const albums = await getCollection("albums");
       albums.map((item) => (
         <a href={`/photos/${item.id}`} class="group transition-all mb-4 block">
           <Image
-            src={item.data.cover}
+            src={item.data.image}
             alt={item.data.title}
             format="avif"
             width={720}

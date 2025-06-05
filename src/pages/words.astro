@@ -10,12 +10,12 @@ const words = await getCollection("words");
 <Layout title="Words">
   <div class="text-center">
     <h1>Words</h1>
-    <p class="text-xl my-4">Some words on a photo</p>
+    <p class="text-xl my-4">Some words about some photos</p>
   </div>
-  <div class="mx-auto container max-w-screen-sm grid grid-cols-2 gap-8">
+  <div class="mx-auto container max-w-screen-sm">
     {
       words.map((item) => (
-        <a href={`/words/${item.id}`} class="group transition-all mb-4 block">
+        <a href={`/words/${item.id}`} class="group transition-all mb-20 block">
           <Image
             src={item.data.image}
             alt={item.data.title}
@@ -32,9 +32,20 @@ const words = await getCollection("words");
               {item.data.title}
             </strong>
             <p class="font-text text-sm">{item.data.description}</p>
+            <p class="font-text text-xs text-orange-300 italic my-5">
+              read more...
+            </p>
           </div>
         </a>
       ))
     }
   </div>
 </Layout>
+<style>
+  img {
+    width: 720px;
+    height: 150px;
+    object-fit: none;
+    margin-top: 2em;
+  }
+</style>

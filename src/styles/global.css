@@ -2,55 +2,55 @@
 
 @font-face {
   font-family: Lato;
-  src: url("/fonts/Merriweather/Lato-Black.woff2") format("woff2");
+  src: url("/fonts/Lato/Lato-Black.woff2") format("woff2");
   font-weight: 900;
   font-display: swap;
 }
 @font-face {
   font-family: Lato;
-  src: url("/fonts/Merriweather/Lato-BlackItalic.woff2") format("woff2");
+  src: url("/fonts/Lato/Lato-BlackItalic.woff2") format("woff2");
   font-style: italic;
   font-weight: 900;
   font-display: swap;
 }
 @font-face {
   font-family: Lato;
-  src: url("/fonts/Merriweather/Lato-Bold.woff2") format("woff2");
+  src: url("/fonts/Lato/Lato-Bold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
   font-family: Lato;
-  src: url("/fonts/Merriweather/Lato-BoldItalic.woff2") format("woff2");
+  src: url("/fonts/Lato/Lato-BoldItalic.woff2") format("woff2");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
   font-family: Lato;
-  src: url("/fonts/Merriweather/Lato-Light.woff2") format("woff2");
+  src: url("/fonts/Lato/Lato-Light.woff2") format("woff2");
   font-weight: 300;
   font-display: swap;
 }
 @font-face {
   font-family: Lato;
-  src: url("/fonts/Merriweather/Lato-LightItalic.woff2") format("woff2");
+  src: url("/fonts/Lato/Lato-LightItalic.woff2") format("woff2");
   font-style: italic;
   font-weight: 300;
   font-display: swap;
 }
 @font-face {
   font-family: Lato;
-  src: url("/fonts/Merriweather/Lato-Regular.woff2") format("woff2");
+  src: url("/fonts/Lato/Lato-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: Lato;
-  src: url("/fonts/Merriweather/Lato-Thin.woff2") format("woff2");
+  src: url("/fonts/Lato/Lato-Thin.woff2") format("woff2");
   font-weight: 100;
 }
 @font-face {
   font-family: Lato;
-  src: url("/fonts/Merriweather/Lato-ThinItalic.woff2") format("woff2");
+  src: url("/fonts/Lato/Lato-ThinItalic.woff2") format("woff2");
   font-style: italic;
   font-weight: 100;
   font-display: swap;

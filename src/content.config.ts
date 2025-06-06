@@ -16,6 +16,7 @@ const albumsCollection = defineCollection({
             alt: z.string(),
             title: z.string(),
             description: z.string(),
+            date: z.string(),
           }),
         )
         .optional(),

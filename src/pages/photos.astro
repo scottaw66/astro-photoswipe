@@ -4,13 +4,15 @@ import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Base.astro";
 
-const albums = await getCollection("albums");
+const albums = await getCollection("albums", ({ data }) => {
+  return data.parent === "albums";
+});
 ---
 
 <Layout title="Photos">
   <div class="text-center">
     <h1>Photos</h1>
-    <p class="text-xl my-4">A collection of my photos</p>
+    <p class="text-xl my-4">Albums of my photos</p>
   </div>
   <div class="mx-auto container max-w-screen-sm grid grid-cols-2 gap-8">
     {

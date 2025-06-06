@@ -4,26 +4,21 @@ import { getCollection } from "astro:content";
 
 import Layout from "../../layouts/Base.astro";
 import { getAlbumImages } from "../../utils/albums";
+import { getChildAlbums } from "../../utils/albums";
 
 export async function getStaticPaths() {
   const albums = await getCollection("albums");
-
-  const paths = Object.values(albums).map((album) => {
-    return {
-      params: {
-        id: album.id,
-      },
-      props: {
-        album,
-      },
-    };
-  });
-
-  return paths;
+  return albums.map((album) => ({
+    params: {
+      id: album.id,
+    },
+    props: { album },
+  }));
 }
 
 const { album } = Astro.props;
 const images = await getAlbumImages(album.id);
+const childAlbums = await getChildAlbums(album.id);
 ---
 
 <Layout title={album.data.title}>
@@ -49,6 +44,13 @@ const images = await getAlbumImages(album.id);
             loading="lazy"
             data-album-image
           />
+        ))
+      }
+      {
+        childAlbums.map((child) => (
+          <p>
+            <a href={`/photos/${child.id}`}>{child.data.title}</a>
+          </p>
         ))
       }
     </div>

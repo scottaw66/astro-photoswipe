@@ -1,7 +1,9 @@
+import { getCollection } from "astro:content";
+
 export async function getAlbumImages(albumId: string) {
   // 1. List all album files from collections path
   let images = import.meta.glob<{ default: ImageMetadata }>(
-    "/src/content/albums/**/*.{jpeg,jpg}",
+    "/src/assets/images/**/*.{jpeg,jpg}",
   );
 
   // 2. Filter images by albumId
@@ -18,4 +20,12 @@ export async function getAlbumImages(albumId: string) {
   resolvedImages.sort(() => Math.random() - 0.5);
 
   return resolvedImages;
+}
+
+export async function getChildAlbums(albumId: string) {
+  const albums = await getCollection("albums", ({ data }) => {
+    return data.parent?.toLowerCase() === albumId.toLowerCase();
+  });
+
+  return albums;
 }

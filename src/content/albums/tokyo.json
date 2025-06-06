@@ -1,14 +1,15 @@
 {
   "title": "Tokyo",
   "description": "A vibrant collection of images capturing the essence of Tokyo, from its bustling streets to serene temples.",
-  "image": "@images/japan/tokyo/tokyo-scrapers-3c677237-c284-4d6e-a638-e12204eabb2e.jpg",
+  "image": "@images/tokyo/tokyo-scrapers-3c677237-c284-4d6e-a638-e12204eabb2e.jpg",
   "parent": "japan",
   "images": [
     {
-      "src": "@images/japan/tokyo/tokyo-scrapers-3c677237-c284-4d6e-a638-e12204eabb2e.jpg",
+      "src": "@images/tokyo/tokyo-scrapers-3c677237-c284-4d6e-a638-e12204eabb2e.jpg",
       "alt": "Tokyo Skyscrapers",
       "title": "Tokyo Skyscrapers",
-      "description": "Tokyo is nothing if not a city of skyscrapers, with its skyline dominated by towering buildings."
+      "description": "Tokyo is nothing if not a city of skyscrapers, with its skyline dominated by towering buildings.",
+      "date": "2023-10-01"
     }
   ]
 }

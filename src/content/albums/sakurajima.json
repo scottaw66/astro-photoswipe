@@ -1,8 +1,8 @@
 {
-  "title": "Kagoshima",
-  "description": "A collection of stunning images showcasing the beauty and culture of Kagoshima, Japan. Experience the serene landscapes and vibrant city life.",
+  "title": "Sakurajima",
+  "description": "A collection of stunning images showcasing the beauty of Sakurajima, a volcanic island in Kagoshima Bay.",
   "image": "@images/kagoshima/sakurajima-across-the-bay-f49bea44-da02-4fe8-862f-c1e88234cc6e.jpg",
-  "parent": "japan",
+  "parent": "kagoshima",
   "images": [
     {
       "src": "@images/kagoshima/sakurajima-across-the-bay-f49bea44-da02-4fe8-862f-c1e88234cc6e.jpg",

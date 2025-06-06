@@ -3,8 +3,6 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 import Layout from "../../layouts/Base.astro";
-import { getAlbumImages } from "../../utils/albums";
-import { getChildAlbums } from "../../utils/albums";
 
 export async function getStaticPaths() {
   const albums = await getCollection("albums");
@@ -17,8 +15,14 @@ export async function getStaticPaths() {
 }
 
 const { album } = Astro.props;
-const images = await getAlbumImages(album.id);
-const childAlbums = await getChildAlbums(album.id);
+
+// get album images
+const images = album.data.images ?? [];
+
+// get album child albums
+const childAlbums = await getCollection("albums", ({ data }) => {
+  return data.parent.toLowerCase() === album.id;
+});
 ---
 
 <Layout title={album.data.title}>
@@ -30,27 +34,56 @@ const childAlbums = await getChildAlbums(album.id);
       {album.data.description}
     </p>
 
+    {
+      childAlbums.length > 0 && (
+        <>
+          <h2 class="text-2xl my-10">Albums</h2>
+          <div class="mx-auto container max-w-screen-sm grid grid-cols-2 gap-8">
+            {childAlbums.map((item) => (
+              <a
+                href={`/photos/${item.id}`}
+                class="group transition-all mb-4 block"
+              >
+                <Image
+                  src={item.data.image}
+                  alt={item.data.title}
+                  format="avif"
+                  width={720}
+                  quality="mid"
+                  class:list={[
+                    "rounded-lg transition-all",
+                    "group-hover:shadow-lg group-hover:opacity-90",
+                  ]}
+                />
+                <div class="mt-4 text-center">
+                  <strong class="font-mono font-normal text-lime-200 text-xl">
+                    {item.data.title}
+                  </strong>
+                  <p class="font-text text-sm">{item.data.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </>
+      )
+    }
+
+    {images.length > 0 && <h2 class="text-2xl my-10">Photos</h2>}
     <div
       class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 text-center"
     >
       {
-        images.map((image) => (
+        images.map((image, index) => (
           <Image
-            src={image}
-            alt={`Image from ${album.data.title} album`}
+            src={image.src}
+            alt={image.alt}
             format="avif"
             quality={50}
             class="rounded mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"
             loading="lazy"
+            data-index={index}
             data-album-image
           />
-        ))
-      }
-      {
-        childAlbums.map((child) => (
-          <p>
-            <a href={`/photos/${child.id}`}>{child.data.title}</a>
-          </p>
         ))
       }
     </div>

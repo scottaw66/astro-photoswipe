@@ -2,7 +2,8 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import Layout from "../../layouts/Base.astro";
+import Base from "../../layouts/Base.astro";
+import { titleCase } from "../../components/utilities/StringFormat";
 
 export async function getStaticPaths() {
   const albums = await getCollection("albums");
@@ -25,7 +26,13 @@ const childAlbums = await getCollection("albums", ({ data }) => {
 });
 ---
 
-<Layout title={album.data.title}>
+<Base
+  title={album.data.title}
+  breadcrumbs={[
+    { title: "Photos", href: "/photos" },
+    { title: `${titleCase(album.data.title)}`, href: `${Astro.url.pathname}` },
+  ]}
+>
   <div class="text-center">
     <h1 class="text-5xl font-bold">
       {album.data.title}
@@ -87,9 +94,5 @@ const childAlbums = await getCollection("albums", ({ data }) => {
         ))
       }
     </div>
-
-    <p class="text-lg my-4 text-center">
-      <a href="/gallery/" class="hover:underline">View other albums</a>
-    </p>
   </div>
-</Layout>
+</Base>

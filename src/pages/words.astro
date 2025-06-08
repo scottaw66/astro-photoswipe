@@ -2,14 +2,14 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import Layout from "../layouts/Base.astro";
+import Base from "../layouts/Base.astro";
 
 import { postdate } from "@components/utilities/DateFormat.js";
 
 const words = await getCollection("words");
 ---
 
-<Layout title="Words">
+<Base title="Words" , breadcrumbs={[{ title: "Words", href: "/words" }]}>
   <div class="text-center">
     <h1>Words</h1>
     <p class="text-xl my-4">Some words about some photos</p>
@@ -45,7 +45,7 @@ const words = await getCollection("words");
       ))
     }
   </div>
-</Layout>
+</Base>
 <style>
   img {
     width: 720px;

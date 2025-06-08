@@ -2,14 +2,14 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
-import Layout from "../layouts/Base.astro";
+import Base from "../layouts/Base.astro";
 
 const albums = await getCollection("albums", ({ data }) => {
   return data.parent === "albums";
 });
 ---
 
-<Layout title="Photos">
+<Base title="Photos" breadcrumbs={[{ title: "Photos", href: "/photos" }]}>
   <div class="text-center">
     <h1>Photos</h1>
     <p class="text-xl my-4">Albums of my photos</p>
@@ -39,4 +39,4 @@ const albums = await getCollection("albums", ({ data }) => {
       ))
     }
   </div>
-</Layout>
+</Base>

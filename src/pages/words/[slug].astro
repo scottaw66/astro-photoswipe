@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { titleCase } from "../../components/utilities/StringFormat";
+
+export async function getStaticPaths() {
+  const words = await getCollection("words");
+  return words.map((word) => ({
+    params: { slug: word.id },
+    props: { word },
+  }));
+}
+
+const { word } = Astro.props;
+---
+
+<Base
+  title={titleCase(word.data.title)}
+  breadcrumbs={[
+    { title: "Words", href: "/words" },
+    { title: `${titleCase(word.data.title)}`, href: `${Astro.url.pathname}` },
+  ]}
+/>

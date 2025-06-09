@@ -15,6 +15,64 @@ export async function getStaticPaths() {
   }));
 }
 
+/**
+ * Find parent album by title.
+ */
+async function getParentAlbum(title) {
+  if (!title || title === "albums") return null;
+  // This assumes getCollection is defined elsewhere in your Astro project
+  const parentAlbums = await getCollection("albums", ({ data }) => {
+    // Matching by title can be fragile if titles aren't unique.
+    // Consider matching by collection entry's `id` or `slug` if possible.
+    return data.title.toLowerCase() === title.toLowerCase();
+  });
+  return parentAlbums.length > 0 ? parentAlbums[0] : null;
+}
+
+/**
+ * Creates a complete breadcrumb trail for a given album.
+ * @param {object} currentAlbum - The current album object from Astro.props.
+ * @returns {Promise<Array<{text: string, href: string}>>} - An array of breadcrumb objects.
+ */
+async function createBreadcrumbs(currentAlbum) {
+  // Initialize the trail with the static links.
+  const breadcrumbs = [
+    { title: "Home", href: "/" },
+    { title: "Photos", href: "/photos" }, // Assuming a base URL for photos
+  ];
+
+  // Build the path of parent albums by walking up the tree.
+  const ancestorPath = [];
+  let parentId = currentAlbum.data.parent;
+
+  while (parentId && parentId !== "albums") {
+    const parentAlbum = await getParentAlbum(parentId);
+    if (parentAlbum) {
+      // Add the parent to the START of the array.
+      ancestorPath.unshift({
+        title: parentAlbum.data.title,
+        href: `/photos/${parentAlbum.data.title.toLowerCase()}`, // Assumes you have a slug for the URL
+      });
+      // Move to the next parent up the chain.
+      parentId = parentAlbum.data.parent;
+    } else {
+      break;
+    }
+  }
+
+  // Combine the static breadcrumbs, the ancestor path, and the current album.
+  const finalBreadcrumbs = [
+    ...breadcrumbs,
+    ...ancestorPath,
+    {
+      title: currentAlbum.data.title,
+      href: `/photos/${currentAlbum.data.title.toLowerCase()}`,
+    }, // The current page
+  ];
+
+  return finalBreadcrumbs;
+}
+
 const { album } = Astro.props;
 
 // get album images
@@ -24,15 +82,13 @@ const images = album.data.images ?? [];
 const childAlbums = await getCollection("albums", ({ data }) => {
   return data.parent.toLowerCase() === album.id;
 });
+
+// Create the breadcrumb trail for the current album
+const breadcrumbTrail = await createBreadcrumbs(album);
+console.log(breadcrumbTrail);
 ---
 
-<Base
-  title={album.data.title}
-  breadcrumbs={[
-    { title: "Photos", href: "/photos" },
-    { title: `${titleCase(album.data.title)}`, href: `${Astro.url.pathname}` },
-  ]}
->
+<Base title={album.data.title} breadcrumbs={breadcrumbTrail}>
   <div class="text-center">
     <h1 class="text-5xl font-bold">
       {album.data.title}
@@ -40,12 +96,11 @@ const childAlbums = await getCollection("albums", ({ data }) => {
     <p class="text-xl my-4">
       {album.data.description}
     </p>
-
     {
       childAlbums.length > 0 && (
         <>
           <h2 class="text-2xl my-10">Albums</h2>
-          <div class="mx-auto container max-w-screen-sm grid grid-cols-2 gap-8">
+          <div class="container mx-auto max-w-screen-md grid grid-cols-2 gap-8">
             {childAlbums.map((item) => (
               <a
                 href={`/photos/${item.id}`}
@@ -54,8 +109,9 @@ const childAlbums = await getCollection("albums", ({ data }) => {
                 <Image
                   src={item.data.image}
                   alt={item.data.title}
-                  format="avif"
-                  width={720}
+                  width={800}
+                  densities={[1, 2, 3]}
+                  loading="lazy"
                   quality="mid"
                   class:list={[
                     "rounded-lg transition-all",
@@ -84,8 +140,10 @@ const childAlbums = await getCollection("albums", ({ data }) => {
           <Image
             src={image.src}
             alt={image.alt}
-            format="avif"
-            quality={50}
+            width={800}
+            densities={[1, 2, 3]}
+            loading="lazy"
+            quality="mid"
             class="rounded mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"
             loading="lazy"
             data-index={index}

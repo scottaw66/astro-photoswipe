@@ -1,17 +1,13 @@
 ---
 const { breadcrumbs } = Astro.props;
-const { breadcrumbs: items } = breadcrumbs;
 ---
 
-<nav class="max-w-4xl mx-auto text-sm text-gray-500 dark:text-gray-400 mb-6 -mt-6" aria-label="Breadcrumb">
+<nav
+  class="container mx-auto max-w-6xl text-sm text-gray-500 dark:text-gray-400 mb-6 -mt-6"
+  aria-label="Breadcrumb"
+>
   <ol class="inline-flex items-center space-x-1">
-    {
-        breadcrumbs.length > 0 && (
-            <span class="mx-2 text-teal-200">/</span>
-            <span class="text-teal-200"><a href="/">Home</a></span>
-            <span class="mx-2 text-teal-200">/</span>
-        )
-    }
+    {breadcrumbs.length > 0 && <span class="mx-2 text-teal-200">/</span>}
     {
       breadcrumbs.map((crumb, i) => (
         <li>

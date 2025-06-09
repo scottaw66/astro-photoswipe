@@ -9,7 +9,14 @@ import { postdate } from "@components/utilities/DateFormat.js";
 const words = await getCollection("words");
 ---
 
-<Base title="Words" , breadcrumbs={[{ title: "Words", href: "/words" }]}>
+<Base
+  title="Words"
+  ,
+  breadcrumbs={[
+    { title: "Home", href: "/" },
+    { title: "Words", href: "/words" },
+  ]}
+>
   <div class="text-center">
     <h1>Words</h1>
     <p class="text-xl my-4">Some words about some photos</p>
@@ -21,8 +28,9 @@ const words = await getCollection("words");
           <Image
             src={item.data.image}
             alt={item.data.title}
-            format="avif"
-            width={720}
+            width={800}
+            densities={[1, 2, 3]}
+            loading="lazy"
             quality="mid"
             class:list={[
               "rounded-lg transition-all",

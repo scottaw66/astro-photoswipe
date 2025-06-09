@@ -17,6 +17,7 @@ const { word } = Astro.props;
 <Base
   title={titleCase(word.data.title)}
   breadcrumbs={[
+    { title: "Home", href: "/" },
     { title: "Words", href: "/words" },
     { title: `${titleCase(word.data.title)}`, href: `${Astro.url.pathname}` },
   ]}

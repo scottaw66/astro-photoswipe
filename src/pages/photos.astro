@@ -9,7 +9,13 @@ const albums = await getCollection("albums", ({ data }) => {
 });
 ---
 
-<Base title="Photos" breadcrumbs={[{ title: "Photos", href: "/photos" }]}>
+<Base
+  title="Photos"
+  breadcrumbs={[
+    { title: "Home", href: "/" },
+    { title: "Photos", href: "/photos" },
+  ]}
+>
   <div class="text-center">
     <h1>Photos</h1>
     <p class="text-xl my-4">Albums of my photos</p>

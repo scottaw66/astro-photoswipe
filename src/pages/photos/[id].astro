@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import Pandabox from "@components/Pandabox.astro";
 
 import Base from "../../layouts/Base.astro";
 import { titleCase } from "../../components/utilities/StringFormat";
@@ -152,5 +153,8 @@ console.log(breadcrumbTrail);
         ))
       }
     </div>
+
+    <h2 class="text-2xl my-10">Photos (Pandabox)</h2>
+    <Pandabox albumid={album.id} transitionType="fade" />
   </div>
 </Base>

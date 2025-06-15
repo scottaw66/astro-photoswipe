@@ -133,28 +133,7 @@ console.log(breadcrumbTrail);
     }
 
     {images.length > 0 && <h2 class="text-2xl my-10">Photos</h2>}
-    <div
-      class="mx-auto container my-8 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 text-center"
-    >
-      {
-        images.map((image, index) => (
-          <Image
-            src={image.src}
-            alt={image.alt}
-            width={800}
-            densities={[1, 2, 3]}
-            loading="lazy"
-            quality="mid"
-            class="rounded mb-4 border border-transparent hover:border-gray-300 transition-all duration-300 ease-in-out hover:shadow-lg"
-            loading="lazy"
-            data-index={index}
-            data-album-image
-          />
-        ))
-      }
-    </div>
 
-    <h2 class="text-2xl my-10">Photos (Pandabox)</h2>
     <Pandabox albumid={album.id} transitionType="fade" />
   </div>
 </Base>

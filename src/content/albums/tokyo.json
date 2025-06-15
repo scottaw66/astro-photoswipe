@@ -1,6 +1,6 @@
 {
   "title": "Tokyo",
-  "description": "A vibrant collection of images capturing the essence of Tokyo, from its bustling streets to serene temples.",
+  "description": "Tokyo is quintessential Japan in a way that few other places in the country are. That sounds counterintuitive, but it's also true.",
   "image": "@images/tokyo/tokyo-scrapers-3c677237-c284-4d6e-a638-e12204eabb2e.jpg",
   "parent": "japan",
   "images": [
@@ -8,7 +8,7 @@
       "src": "@images/tokyo/tokyo-scrapers-3c677237-c284-4d6e-a638-e12204eabb2e.jpg",
       "alt": "Tokyo Skyscrapers",
       "title": "Tokyo Skyscrapers",
-      "description": "Tokyo is nothing if not a city of skyscrapers, with its skyline dominated by towering buildings.",
+      "description": "This is a placeholder photo. Stay tuned!",
       "date": "2023-10-01"
     }
   ]

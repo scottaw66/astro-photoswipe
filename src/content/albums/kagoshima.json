@@ -1,15 +1,22 @@
 {
   "title": "Kagoshima",
-  "description": "A collection of stunning images showcasing the beauty and culture of Kagoshima, Japan. Experience the serene landscapes and vibrant city life.",
-  "image": "@images/kagoshima/sakurajima-across-the-bay-f49bea44-da02-4fe8-862f-c1e88234cc6e.jpg",
+  "description": "Kagoshima, in southern Japan, is known for its stunning views of Sakurajima, an active volcano that dominates the skyline. This is where I spent most of my time in Japan, and it holds a special place in my heart.",
+  "image": "@images/kagoshima/SakurajimaYoshino.jpg",
   "parent": "japan",
   "images": [
     {
-      "src": "@images/kagoshima/sakurajima-across-the-bay-f49bea44-da02-4fe8-862f-c1e88234cc6e.jpg",
-      "alt": "Sakurajima from Kagoshima Bay",
-      "title": "Sakurajima from Kagoshima Bay",
-      "description": "Sakurajima, one of the most active volcanoes in the world, sits just across the bay from the city of Kagoshima.",
-      "date": "2023-10-01"
+      "src": "@images/kagoshima/SakurajimaYoshino.jpg",
+      "alt": "Sakurajima from Yoshino Park",
+      "title": "Sakurajima from Yoshino Park",
+      "description": "We loved spending time in Yoshino Park when I was a kid, and its amazing view of Sakurajima was certainly part of the reason. I'm not actually sure what year this photo was taken.",
+      "date": "1979-10-01"
+    },
+    {
+      "src": "@images/kagoshima/YoshinoSakurajima.jpg",
+      "alt": "Sakurajima from our Yoshino house",
+      "title": "Sakurajima from our Yoshino house",
+      "description": "This is a view of Sakurajima from our house in Yoshino, exact year unknown. It would have been between 1975 and 1977, I think.",
+      "date": "1976-06-06"
     }
   ]
 }

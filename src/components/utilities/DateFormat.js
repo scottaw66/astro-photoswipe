@@ -5,6 +5,7 @@ import { enUS } from "date-fns/locale/en-US";
 
 const postPattern = "eeee, dd MMM yyyy";
 const modfiedPattern = "eeee, dd MMM yyyy HH:mm:ss";
+const photoPattern = "dd MMM yyyy";
 
 export function rfc2822(date) {
   const pattern = "eee, dd MMM yyyy HH:mm:ss zzz";
@@ -22,4 +23,8 @@ export function modifieddate(date) {
 
 export function year() {
   return format(new Date(), "yyyy");
+}
+
+export function photodate(date) {
+  return format(date, photoPattern, { locale: enUS });
 }

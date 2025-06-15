@@ -2,6 +2,8 @@
 import { type CollectionEntry, getEntry } from "astro:content";
 import { Image } from "astro:assets";
 
+import { photodate } from "@components/utilities/DateFormat.js";
+
 interface Props {
   albumid: string;
   album?: CollectionEntry<"albums">;
@@ -22,11 +24,18 @@ const images = album?.data.images ?? [];
           alt={image.alt}
           widths={[180, 400, 600]}
           sizes="(max-width: 260px) 180px, (max-width: 520px) 400px, 600px"
-          quality={40}
+          quality={70}
           loading="eager"
           data-index={index}
           class="thumbnail"
         />
+        <p class="text-center font-mono font-normal text-lime-200 text-2xl">
+          {image.title}
+        </p>
+        <p class="font-text text-sm text-teal-200 my-4">
+          {photodate(image.date)}
+        </p>
+        <p>{image.description}</p>
       </button>
     ))
   }
@@ -42,18 +51,14 @@ const images = album?.data.images ?? [];
                 alt={image.alt}
                 widths={[600, 1200, 1800, 2200]}
                 sizes="(max-width: 520px) 600px, (max-width: 1100px) 1200px, (max-width: 1700px) 1800px, 2200px"
-                quality={40}
+                quality={100}
                 loading={index < 4 ? "eager" : "lazy"}
                 class="lightbox-image"
                 data-index={index}
               />
             </div>
             <figcaption class="lightbox-caption">
-              {image.title ? (
-                <p>
-                  {index + 1}. {image.title}
-                </p>
-              ) : null}
+              {image.title ? <p>{image.title}</p> : null}
               {image.description ? <p>{image.description}</p> : null}
             </figcaption>
           </figure>
@@ -122,7 +127,7 @@ const images = album?.data.images ?? [];
     --duration-background-transition: 0.3s; /* Duration of lightbox background transition*/
     --duration-slide-transition: 0.3s; /* Duration of slide transition*/
     --duration-close-transition: 0.5s; /* close*/
-    --caption-height: 5lh; /* use line height units for size of caption area */
+    --caption-height: 8lh; /* use line height units for size of caption area */
     --ease-zoom: cubic-bezier(0.5, -0.5, 0.1, 1.5);
     --ease-slide-transition: cubic-bezier(0.9, 0, 0.1, 1);
   }
@@ -142,6 +147,7 @@ const images = album?.data.images ?? [];
     width: 100%;
     height: auto;
     object-fit: cover;
+    margin-bottom: 2em;
   }
 
   /* Prevent interaction with page when modal is open. */
@@ -270,7 +276,7 @@ const images = album?.data.images ?? [];
     grid-row-start: main-start;
     grid-row-end: main-end;
     width: 100dvw;
-    height: 100dvh;
+    height: 90dvh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;

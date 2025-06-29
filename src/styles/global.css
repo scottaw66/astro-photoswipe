@@ -127,6 +127,18 @@
   code {
     @apply font-mono;
   }
+  div.word img {
+    max-width: 100%;
+    height: auto;
+    margin: 3em 0;
+  }
+  div.word p {
+    margin: 1em 0;
+    font-size: 1.5em;
+  }
+  div.word p:first-of-type {
+    margin-top: 2em;
+  }
   svg#footer-bluesky-icon {
     fill: var(--color-blue-400);
     width: 1.5em;

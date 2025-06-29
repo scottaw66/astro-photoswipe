@@ -1,7 +1,9 @@
 ---
 import { getCollection } from "astro:content";
+import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import { titleCase } from "../../components/utilities/StringFormat";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const words = await getCollection("words");
@@ -12,6 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { word } = Astro.props;
+const { Content } = await render(word);
 ---
 
 <Base
@@ -21,4 +24,18 @@ const { word } = Astro.props;
     { title: "Words", href: "/words" },
     { title: `${titleCase(word.data.title)}`, href: `${Astro.url.pathname}` },
   ]}
-/>
+>
+  <div class="word mx-auto container max-w-screen-lg">
+    {
+      word.data.image ? (
+        <Image
+          src={word.data.image}
+          alt={word.data.title}
+          class="mb-4 rounded-lg"
+          width={950}
+        />
+      ) : null
+    }
+    <Content />
+  </div>
+</Base>

@@ -8,9 +8,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   image: {
-    experimentalLayout: "constrained",
-  },
-  experimental: {
-    responsiveImages: true,
+    layout: "constrained",
   },
 });

@@ -421,6 +421,10 @@ const images = album?.data.images ?? [];
     display: block;
     background: none;
     cursor: pointer;
+    
+    &:disabled {
+      display: none;
+    }
   }
 
   .prev-button {
@@ -586,6 +590,14 @@ const images = album?.data.images ?? [];
 
         prevImage?.classList.add("previous");
         nextImage?.classList.add("next");
+
+        // Update button states based on current index
+        if (prevButton) {
+          prevButton.disabled = currentIndex === 0;
+        }
+        if (nextButton) {
+          nextButton.disabled = currentIndex === lightboxImageContainers.length - 1;
+        }
       } else {
         console.error(`Image container with id image-${index} not found.`);
       }

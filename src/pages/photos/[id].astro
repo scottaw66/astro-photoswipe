@@ -1,10 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import Pandabox from "@components/Pandabox.astro";
-
+import Lightbox from "@components/Lightbox.astro";
 import Base from "../../layouts/Base.astro";
-import { titleCase } from "../../components/utilities/StringFormat";
 
 export async function getStaticPaths() {
   const albums = await getCollection("albums");
@@ -133,7 +131,6 @@ console.log(breadcrumbTrail);
     }
 
     {images.length > 0 && <h2 class="text-2xl my-10">Photos</h2>}
-
-    <Pandabox albumid={album.id} transitionType="fade" />
+    <Lightbox albumid={album.id} />
   </div>
 </Base>

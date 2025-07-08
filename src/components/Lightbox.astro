@@ -1,0 +1,45 @@
+---
+import { type CollectionEntry, getEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+import { photodate } from "@components/utilities/DateFormat.js";
+
+interface Props {
+  albumid: string;
+  album?: CollectionEntry<"albums">;
+}
+
+const { albumid } = Astro.props;
+const album = await getEntry("albums", albumid);
+const images = album?.data.images ?? [];
+---
+
+<div id="gallery">
+  {
+    images.map((image, index) => (
+      <Image
+        src={image.src}
+        alt={image.alt}
+        widths={[600, 1200, 1800, 2200]}
+        sizes="(max-width: 520px) 600px, (max-width: 1100px) 1200px, (max-width: 1700px) 1800px, 2200px"
+        quality={100}
+        loading={index < 4 ? "eager" : "lazy"}
+        class="lightbox-image"
+        data-index={index}
+      />
+    ))
+  }
+</div>
+
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  import "photoswipe/style.css";
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#gallery",
+    children: "a",
+    pswpModule: () => import("photoswipe"),
+  });
+
+  lightbox.init();
+</script>

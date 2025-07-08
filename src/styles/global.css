@@ -133,11 +133,12 @@
     margin: 3em 0;
   }
   div.word p {
-    margin: 1em 0;
-    font-size: 1.5em;
+    margin: 1em 4em 1em 2em;
+    font-size: 1.33em;
+    font-weight: 300;
   }
   div.word p:first-of-type {
-    margin-top: 2em;
+    margin-top: 3em;
   }
   svg#footer-bluesky-icon {
     fill: var(--color-blue-400);

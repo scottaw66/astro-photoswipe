@@ -6,6 +6,8 @@
   "images": [
     {
       "src": "@images/tokyo/tokyo-scrapers-3c677237-c284-4d6e-a638-e12204eabb2e.jpg",
+      "height": "1600",
+      "width": "2400",
       "alt": "Tokyo Skyscrapers",
       "title": "Tokyo Skyscrapers",
       "description": "This is a placeholder photo. Stay tuned!",

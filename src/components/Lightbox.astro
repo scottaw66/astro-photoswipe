@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getEntry } from "astro:content";
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 
 import { photodate } from "@components/utilities/DateFormat.js";
 
@@ -14,28 +14,33 @@ const album = await getEntry("albums", albumid);
 const images = album?.data.images ?? [];
 ---
 
-<div id="gallery">
+<div
+  id="gallery"
+  class="mx-auto container max-w-screen-xl grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 justify-items-center"
+>
   {
-    images.map((image, index) => (
-      <a
-        href={image.src}
-        data-pswp-width={image.width}
-        data-pswp-height={image.height}
-        target="_blank"
-      >
-        <Image
-          src={image.src}
-          alt={image.alt}
-          width="600"
-          widths={[600, 1200, 1800, 2200]}
-          sizes="(max-width: 520px) 600px, (max-width: 1100px) 1200px, (max-width: 1700px) 1800px, 2200px"
-          quality={100}
-          loading={index < 4 ? "eager" : "lazy"}
-          class="lightbox-image"
-          data-index={index}
-        />
-      </a>
-    ))
+    images.map(async (image, index) => {
+      let bigImage = await getImage({ src: image.src });
+      return (
+        <a
+          href={bigImage.src}
+          data-pswp-width={image.width}
+          data-pswp-height={image.height}
+          target="_blank"
+        >
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width="300"
+            widths={[600, 900]}
+            quality={80}
+            loading={index < 4 ? "eager" : "lazy"}
+            class="lightbox-image"
+            data-index={index}
+          />
+        </a>
+      );
+    })
   }
 </div>
 

@@ -1,12 +1,12 @@
 {
-  "title": "Photos by Scott Willsey",
+  "title": "Photos by Interesting Person",
   "description": "photos I've taken",
-  "url": "https://photos.scottwillsey.com/",
-  "name": "Scott Willsey",
+  "url": "https://photos.interesting.com/",
+  "name": "Interesting Person",
   "social": {
-    "github": "https://github.com/scottaw66",
-    "mastodon": "https://social.lol/@scottwillsey",
-    "bluesky": "https://bsky.app/profile/scottwillsey.com"
+    "github": "https://github.com/rando",
+    "mastodon": "https://mastodon.social/@rando",
+    "bluesky": "https://bsky.app/profile/rando.com"
   },
   "posts": {
     "path": "/",

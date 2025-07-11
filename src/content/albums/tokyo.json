@@ -6,12 +6,48 @@
   "images": [
     {
       "src": "@images/tokyo/tokyo-scrapers-3c677237-c284-4d6e-a638-e12204eabb2e.jpg",
-      "height": "1600",
-      "width": "2400",
+      "height": "1334",
+      "width": "2000",
       "alt": "Tokyo Skyscrapers",
       "title": "Tokyo Skyscrapers",
       "description": "This is a placeholder photo. Stay tuned!",
       "date": "2023-10-01"
+    },
+    {
+      "src": "@images/tokyo/Akihabara-A1EB78FD-2064-40BE-9BB2-C5EA87B7CA46.jpg",
+      "height": "1312",
+      "width": "2000",
+      "alt": "Akihabara at Night",
+      "title": "Akihabara at Night",
+      "description": "Everyone needs to visit Akihabara, especially at night.",
+      "date": "2019-03-03"
+    },
+    {
+      "src": "@images/tokyo/Shibuya-F852EE7C-8D33-44C8-A271-AFF0083232FD.jpg",
+      "height": "1324",
+      "width": "2000",
+      "alt": "Shibuya Crossing",
+      "title": "Shibuya Crossing",
+      "description": "A rare photo of Shibuya crossing actually hosting vehicles instead of the famous deluge of crosswalkers!",
+      "date": "2019-02-08"
+    },
+    {
+      "src": "@images/tokyo/Tokyo-Tower-Roppongi-2-6A7275EA-E10F-471C-A117-36521C503A84.jpg",
+      "height": "1250",
+      "width": "2000",
+      "alt": "Tokyo Tower at Night",
+      "title": "Tokyo Tower at Night",
+      "description": "Tokyo Tower, the iconic beauty on the Tokyo skyline, as seen from Roppongi Hills.",
+      "date": "2020-11-09"
+    },
+    {
+      "src": "@images/tokyo/Tokyo-Tower-Roppongi-3788B06F-AECB-477C-BA67-38AFE14B7ADC.jpg",
+      "height": "1332",
+      "width": "2000",
+      "alt": "Tokyo Tower from Roppongi Hills",
+      "title": "Tokyo Tower from Roppongi Hills",
+      "description": "The best place to take a photo of the Tokyo Tower is at the viewing deck of Mori building in Roponggi Hills.",
+      "date": "2017-12-15"
     }
   ]
 }

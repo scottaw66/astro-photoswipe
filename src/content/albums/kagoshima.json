@@ -1,62 +1,35 @@
 {
   "title": "Kagoshima",
-  "description": "Kagoshima, in southern Japan, is known for its stunning views of Sakurajima, an active volcano that dominates the skyline. This is where I spent most of my time in Japan, and it holds a special place in my heart.",
-  "image": "@images/kagoshima/SakurajimaYoshino.jpg",
+  "description": "Kagoshima, in southern Japan, is known for its stunning views of Sakurajima, an active volcano that dominates the skyline. But it also has amazing food!",
+  "image": "@images/kagoshima/Kagoshima-Tenmonkan-dori-4B007563-5BBA-4FE4-BE35-91B806577509.jpg",
   "parent": "japan",
   "images": [
     {
-      "src": "@images/kagoshima/SakurajimaYoshino.jpg",
-      "height": "2666",
-      "width": "3922",
-      "alt": "Sakurajima from Yoshino Park",
-      "title": "Sakurajima from Yoshino Park",
-      "description": "We loved spending time in Yoshino Park when I was a kid, and its amazing view of Sakurajima was certainly part of the reason. I'm not actually sure what year this photo was taken.",
-      "date": "1979-10-01"
+      "src": "@images/kagoshima/Kagoshima-Tenmonkan-dori-4B007563-5BBA-4FE4-BE35-91B806577509.jpg",
+      "height": "1334",
+      "width": "2000",
+      "alt": "Tenmonkan Dori",
+      "title": "Tenmonkan Dori",
+      "description": "One of the iconic images of Kagoshima City is the Tenmonkan Dori road, with its covered shopping areas and wonderful trams.",
+      "date": "2021-01-07"
     },
     {
-      "src": "@images/kagoshima/YoshinoSakurajima.jpg",
-      "height": "2700",
-      "width": "3985",
-      "alt": "Sakurajima from our Yoshino house",
-      "title": "Sakurajima from our Yoshino house",
-      "description": "This is a view of Sakurajima from our house in Yoshino, exact year unknown. It would have been between 1975 and 1977, I think.",
-      "date": "1976-06-06"
+      "src": "@images/kagoshima/Sakurajima-Kagoshima-765E4887-5134-410A-89F4-DD6832F885A1.jpg",
+      "height": "1334",
+      "width": "2000",
+      "alt": "Sakurajima Overlooking the City",
+      "title": "Sakurajima Overlooking the City",
+      "description": "You can't have Kagoshima without Sakurajima, one of the world's most active (and inhabited) volcanoes.",
+      "date": "2024-01-07"
     },
     {
-      "src": "@images/kagoshima/SakurajimaYoshino.jpg",
-      "height": "2666",
-      "width": "3922",
-      "alt": "Sakurajima from Yoshino Park",
-      "title": "Sakurajima from Yoshino Park",
-      "description": "We loved spending time in Yoshino Park when I was a kid, and its amazing view of Sakurajima was certainly part of the reason. I'm not actually sure what year this photo was taken.",
-      "date": "1979-10-01"
-    },
-    {
-      "src": "@images/kagoshima/YoshinoSakurajima.jpg",
-      "height": "2700",
-      "width": "3985",
-      "alt": "Sakurajima from our Yoshino house",
-      "title": "Sakurajima from our Yoshino house",
-      "description": "This is a view of Sakurajima from our house in Yoshino, exact year unknown. It would have been between 1975 and 1977, I think.",
-      "date": "1976-06-06"
-    },
-    {
-      "src": "@images/kagoshima/SakurajimaYoshino.jpg",
-      "height": "2666",
-      "width": "3922",
-      "alt": "Sakurajima from Yoshino Park",
-      "title": "Sakurajima from Yoshino Park",
-      "description": "We loved spending time in Yoshino Park when I was a kid, and its amazing view of Sakurajima was certainly part of the reason. I'm not actually sure what year this photo was taken.",
-      "date": "1979-10-01"
-    },
-    {
-      "src": "@images/kagoshima/YoshinoSakurajima.jpg",
-      "height": "2700",
-      "width": "3985",
-      "alt": "Sakurajima from our Yoshino house",
-      "title": "Sakurajima from our Yoshino house",
-      "description": "This is a view of Sakurajima from our house in Yoshino, exact year unknown. It would have been between 1975 and 1977, I think.",
-      "date": "1976-06-06"
+      "src": "@images/kagoshima/Sakurajima-Kagoshima-Roofs-186CE89F-7816-41D8-9FE9-E68D6B842BF7.jpg",
+      "height": "1334",
+      "width": "2000",
+      "alt": "Senganen, the garden made by Shimazu family",
+      "title": "Senganen, the garden made by Shimazu family",
+      "description": "This may be one of the most tranquil views of an active volcano you'll ever see.",
+      "date": "2022-04-26"
     }
   ]
 }

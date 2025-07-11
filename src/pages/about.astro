@@ -1,10 +1,20 @@
 ---
 import Base from "../layouts/Base.astro";
+import { Image } from "astro:assets";
+
+import avatar from "@assets/avatar.png";
 ---
 
 <Base title="Gallery">
   <div class="text-center">
     <h1>About</h1>
-    <p class="text-xl my-4">IT ME!!</p>
+    <Image src={avatar} alt="avatar" width="200" height="200" />
+    <p class="text-xl my-4">I've always loved photography and writing about my photos.</p>
   </div>
 </Base>
+<style>
+  img {
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+</style>

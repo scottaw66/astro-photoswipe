@@ -1,17 +1,17 @@
 {
   "title": "Karuizawa",
-  "description": "Karuizawa is a picturesque mountain resort town in Japan, known for its natural beauty and outdoor activities. It's also where my family spent the first year of our time in Japan.",
-  "image": "@images/karuizawa/KaruizawaSnowWinter.jpg",
+  "description": "Karuizawa is a picturesque mountain resort town in Japan, known for its natural beauty and outdoor activities.",
+  "image": "@images/karuizawa/Karuizawa-35424219-BCCC-46B6-BFA2-F7F99F793D79.jpg",
   "parent": "japan",
   "images": [
     {
-      "src": "@images/karuizawa/KaruizawaSnowWinter.jpg",
-      "height": "1378",
-      "width": "2048",
-      "alt": "Karuizawa in Winter",
-      "title": "Karuizawa in Winter",
-      "description": "I'm not sure of the exact date of this photo of downtown Karuizawa. It was taken by my dad in 1975, and clearly it was winter.",
-      "date": "1975-12-12"
+      "src": "@images/karuizawa/Karuizawa-35424219-BCCC-46B6-BFA2-F7F99F793D79.jpg",
+      "height": "1334",
+      "width": "2000",
+      "alt": "Karuizawa",
+      "title": "Karuizawa",
+      "description": "A day trip to karuizawa,Japan. Was starstruck by the beauty of the streets in karuizawa,Japan during the autumn season. This was one of the pictures taken during my time there.",
+      "date": "2021-09-23"
     }
   ]
 }

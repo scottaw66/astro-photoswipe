@@ -1,16 +1,16 @@
 {
   "title": "Oregon Coast",
-  "description": "The Oregon Coast is home to a diverse range of beach experiences, quaint coastal towns, and stunning natural beauty. It's one of our favorite places to vacation.",
+  "description": "The Oregon Coast is home to a diverse range of beach experiences, quaint coastal towns, and stunning natural beauty.",
   "image": "@images/oregon-coast/newport-lighthouse-c8fdd3f6-9af9-47da-aa9d-29dc27d79dbc.jpg",
   "parent": "albums",
   "images": [
     {
       "src": "@images/oregon-coast/newport-lighthouse-c8fdd3f6-9af9-47da-aa9d-29dc27d79dbc.jpg",
-      "height": "2682",
-      "width": "4037",
+      "height": "1474",
+      "width": "2000",
       "alt": "Newport Lighthouse",
       "title": "Newport Lighthouse",
-      "description": "The iconic Newport Lighthouse standing tall against the backdrop of a cloudy sky.",
+      "description": "The iconic Newport Lighthouse standing tall against the backdrop of the Oregon sky.",
       "date": "2023-10-01"
     }
   ]

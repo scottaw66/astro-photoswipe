@@ -31,11 +31,12 @@ const { Content } = await render(word);
         <Image
           src={word.data.image}
           alt={word.data.title}
-          class="mb-4 rounded-lg"
+          class="mb-15 rounded-lg"
           width={950}
         />
       ) : null
     }
+    <h5 class="mx-auto w-fit">{word.data.title}</h5>
     <Content />
   </div>
 </Base>

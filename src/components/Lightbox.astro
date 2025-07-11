@@ -38,6 +38,11 @@ const images = album?.data.images ?? [];
             class="lightbox-image"
             data-index={index}
           />
+          <span class="pswp-caption-content mx-auto container max-w-screen-xl">
+            <h5>{image.title}</h5>
+            <p>{image.description}</p>
+            <p class="text-orange-200 italic">{image.date}</p>
+          </span>
         </a>
       );
     })
@@ -47,11 +52,19 @@ const images = album?.data.images ?? [];
 <script>
   import PhotoSwipeLightbox from "photoswipe/lightbox";
   import "photoswipe/style.css";
+  import PhotoSwipeDynamicCaption from "photoswipe-dynamic-caption-plugin";
+  import "@styles/photoswipe-dynamic-caption-plugin.css";
 
   const lightbox = new PhotoSwipeLightbox({
     gallery: "#gallery",
     children: "a",
     pswpModule: () => import("photoswipe"),
+  });
+
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+    mobileLayoutBreakpoint: 700,
+    type: "below",
+    mobileCaptionOverlapRatio: 1,
   });
 
   lightbox.init();

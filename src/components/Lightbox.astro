@@ -2,8 +2,6 @@
 import { type CollectionEntry, getEntry } from "astro:content";
 import { Image, getImage } from "astro:assets";
 
-import { photodate } from "@components/utilities/DateFormat.js";
-
 interface Props {
   albumid: string;
   album?: CollectionEntry<"albums">;

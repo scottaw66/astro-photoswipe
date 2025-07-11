@@ -9,10 +9,7 @@
     "bluesky": "https://bsky.app/profile/rando.com"
   },
   "posts": {
-    "path": "/",
+    "path": "/words",
     "paginationSize": 7
-  },
-  "reviews": {
-    "paginationSize": 10
   }
 }

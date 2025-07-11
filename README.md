@@ -1,6 +1,6 @@
-# photos.ScottWillsey.com
+# astro-photoswipe
 
-A subdomain of my site for my photography. This is a work in progress.
+An [Astro](https://astro.build/) site for photography with integrated [PhotoSwipe](https://photoswipe.com/) lightbox. This is a work in progress. Repo located at [https://github.com/scottaw66/astro-photoswipe](https://github.com/scottaw66/astro-photoswipe).
 
 ## Tech Stack
 

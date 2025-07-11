@@ -1,17 +1,19 @@
 {
-  "name": "photos",
-  "version": "0.0.1",
-  "description": "A subdomain of my site for my photography.",
+  "name": "astro-photoswipe",
+  "version": "0.1.0",
+  "description": "An Astro site for photography with integrated PhotoSwipe lightbox",
   "keywords": [
     "photography",
     "astro",
     "blog",
+    "lightbox",
+    "photoswipe",
     "scottwillsey"
   ],
-  "homepage": "https://github.com/scottaw66/photos#readme",
+  "homepage": "https://github.com/scottaw66/astro-photoswipe#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scottaw66/photos.git"
+    "url": "git+https://github.com/scottaw66/astro-photoswipe.git"
   },
   "license": "MIT",
   "author": "Scott Willsey",

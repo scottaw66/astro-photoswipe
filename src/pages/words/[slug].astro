@@ -36,7 +36,9 @@ const { Content } = await render(word);
         />
       ) : null
     }
-    <h5 class="mx-auto w-fit">{word.data.title}</h5>
+    <h5 class="mx-auto w-fit font-mono">{word.data.title}</h5>
+    <div class="font-text text-sm">
     <Content />
+    </div>
   </div>
 </Base>

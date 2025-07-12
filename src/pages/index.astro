@@ -1,5 +1,16 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
+
+import { postdate } from "@components/utilities/DateFormat.js";
+
+let allWords = await getCollection("words");
+allWords = allWords.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+);
+
+const indexWords = allWords.slice(0, 3);
 
 const title = "astro-photoswipe";
 ---
@@ -22,4 +33,50 @@ const title = "astro-photoswipe";
       Eventually this page will show the lastest article (words) posted, and maybe a random image.
     </p>
   </div>
+  <div class="text-center mt-20">
+    <h2>Recent Words</h2>
+    <p class="text-xl my-4">
+      Some recent things I've written about some of my photos
+    </p>
+  </div>
+  <div class="mx-auto container max-w-screen-sm">
+    {
+      indexWords.map((item) => (
+        <a href={`/words/${item.id}`} class="group transition-all mb-20 block">
+          <Image
+            src={item.data.image}
+            alt={item.data.title}
+            width={800}
+            densities={[1, 2, 3]}
+            loading="lazy"
+            quality="mid"
+            class:list={[
+              "rounded-lg transition-all",
+              "group-hover:shadow-lg group-hover:opacity-90",
+            ]}
+          />
+          <div class="mt-4">
+            <strong class="text-center font-mono font-normal text-lime-200 text-3xl">
+              {item.data.title}
+            </strong>
+            <p class="font-text text-sm text-teal-200 my-4">
+              {postdate(item.data.date)}
+            </p>
+            <p class="font-text text-sm -my-2">{item.data.description}</p>
+            <p class="font-text text-xs text-orange-300 italic my-5">
+              read more...
+            </p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
 </Base>
+<style>
+  img {
+    width: 720px;
+    height: 150px;
+    object-fit: none;
+    margin-top: 2em;
+  }
+</style>

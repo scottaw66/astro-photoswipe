@@ -1,6 +1,6 @@
 {
   "name": "astro-photoswipe",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An Astro site for photography with integrated PhotoSwipe lightbox",
   "keywords": [
     "photography",

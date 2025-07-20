@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getEntry } from "astro:content";
+import { type CollectionEntry, getEntry, getCollection } from "astro:content";
 import { Image, getImage } from "astro:assets";
 
 interface Props {
@@ -9,7 +9,27 @@ interface Props {
 
 const { albumid } = Astro.props;
 const album = await getEntry("albums", albumid);
-const images = album?.data.images ?? [];
+
+let images;
+// if this is the "All Photos" album, collect all images from all albums
+if (albumid === "all") {
+  album.data.images = [];
+  const allAlbums = await getCollection("albums", ({ data }) => {
+    return data.images && data.images.length > 0;
+  });
+
+  // flatten all images from all albums into one array
+  images = allAlbums
+    .flatMap((albumItem) => albumItem.data.images)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  // assign the collected images to the album's images property
+  if (album) {
+    album.data.images = images;
+  }
+} else {
+  images = album?.data.images ?? [];
+}
 ---
 
 <div

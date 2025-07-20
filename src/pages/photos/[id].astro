@@ -75,7 +75,23 @@ async function createBreadcrumbs(currentAlbum) {
 const { album } = Astro.props;
 
 // get album images
-const images = album.data.images ?? [];
+let images;
+
+// if this is the "All Photos" album, collect all images from all albums
+if (album.id === "all") {
+  album.data.images = [];
+  const allAlbums = await getCollection("albums", ({ data }) => {
+    return data.images && data.images.length > 0;
+  });
+
+  // flatten all images from all albums into one array
+  images = allAlbums.flatMap((albumItem) => albumItem.data.images);
+
+  // assign the collected images to the album's data.images property
+  album.data.images = images;
+} else {
+  images = album?.data.images ?? [];
+}
 
 // get album child albums
 const childAlbums = await getCollection("albums", ({ data }) => {

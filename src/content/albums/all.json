@@ -1,0 +1,6 @@
+{
+  "title": "All Photos",
+  "description": "All photos in one place!",
+  "image": "@assets/AllPhotos.png",
+  "parent": "albums"
+}

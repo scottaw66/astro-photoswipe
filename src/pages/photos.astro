@@ -4,9 +4,11 @@ import { getCollection } from "astro:content";
 
 import Base from "../layouts/Base.astro";
 
-const albums = await getCollection("albums", ({ data }) => {
-  return data.parent === "albums";
-});
+const albums = (
+  await getCollection("albums", ({ data }) => {
+    return data.parent === "albums";
+  })
+).sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Base

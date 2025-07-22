@@ -14,7 +14,7 @@ const indexWords = allWords.slice(0, 3);
 
 const albums = await getCollection("albums", (album) => album.data.images && album.data.images.length > 0);
 const randomAlbum = albums[Math.floor(Math.random() * albums.length)];
-const randomImage = randomAlbum.data.images[Math.floor(Math.random() * randomAlbum.data.images.length)];
+const randomImage = randomAlbum?.data.images?.[Math.floor(Math.random() * randomAlbum.data.images.length)];
 
 const title = "astro-photoswipe";
 ---

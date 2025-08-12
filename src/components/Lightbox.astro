@@ -32,29 +32,6 @@ if (albumid === "all") {
   if (album) {
     album.data.images = images;
   }
-} else if (albumid === "all-japan") {
-  album.data.images = [];
-  const allAlbums = await getCollection("albums", ({ data, id }) => {
-    return (
-      data.parent === "japan" &&
-      data.images &&
-      data.images.length > 0 &&
-      id !== "all-japan"
-    );
-  });
-
-  // flatten all images from all Japan albums into one array
-  const allJapanImages = allAlbums.flatMap((albumItem) => albumItem.data.images);
-  
-  // deduplicate images by src to avoid duplicates across albums
-  const uniqueJapanImages = allJapanImages.filter((image, index, array) => 
-    array.findIndex(img => img?.src === image?.src) === index
-  );
-  
-  images = uniqueJapanImages.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  // assign the collected images to the album's data.images property
-  album.data.images = images;
 } else {
   images = album?.data.images ?? [];
 }
